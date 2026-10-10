@@ -9,7 +9,7 @@ import {
 
 interface Props {
     vitalname : string;
-    value : number;
+    value : any;
 }
 
 function VitalTracker(props : Props){

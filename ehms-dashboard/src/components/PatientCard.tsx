@@ -21,14 +21,14 @@ function PatientCard() {
         <CardDescription>
             Room 304 • Male, 45y
         </CardDescription>
-        <Indicators />
+        <Indicators className="col-start-2 row-start-1 row-span-2" state={"Stable"} />
       </CardHeader>
       <CardContent className="flex flex-row">
             <HeartRateTracker className="flex" />
             <div className="flex flex-col">
-                <VitalTracker vitalname={"O2 Saturation"} value={98} />
-                <VitalTracker vitalname={"O2 Saturation"} value={98} />
-                <VitalTracker vitalname={"O2 Saturation"} value={98} />
+                <VitalTracker vitalname={"O2 Sat"} value={98} />
+                <VitalTracker vitalname={"Temperature"} value={"99.1°F"} />
+                <VitalTracker vitalname={"ECG"} value={"Normal"} />
             </div>
       </CardContent>
       <CardFooter className="flex-col gap-2">
