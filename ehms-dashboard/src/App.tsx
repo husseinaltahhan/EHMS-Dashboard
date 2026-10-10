@@ -1,10 +1,9 @@
 //import './App.css'
-import PatientCard from './components/PatientCard'
-
+import Dashboard from './components/Dashboard'
 
 function App() {
   return (
-   <PatientCard />
+   <Dashboard />
   )
 }
 
