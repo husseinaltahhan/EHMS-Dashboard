@@ -8,9 +8,9 @@ function Header(){
                 <h1 className="text-lg">Waiting Room Monitoring</h1>
                 <p className="text-sm">Live telemetry data from all connected patients</p>
             </div>
-            <ConditionIndicator />
-            <ConditionIndicator />
-            <ConditionIndicator />
+            <ConditionIndicator state="Stable" patientNumber={1} />
+            <ConditionIndicator state="Unstable" patientNumber={0} />
+            <ConditionIndicator state="Critical" patientNumber={1}/>
             <FilterButton />
         </div>
     )

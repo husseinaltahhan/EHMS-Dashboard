@@ -1,11 +1,18 @@
 import Indicators from './Indicators'
+import type { State } from "../types"
 
+interface Props {
+    state : State,
+    patientNumber? : number
+}
 
-function ConditionIndicator(){
-    return(
+function ConditionIndicator({ state, patientNumber }: Props) {
+    const isCount = patientNumber !== undefined
+
+    return (
         <div className="flex h-12 px-4 gap-6 bg-background rounded-sm ring-1 ring-foreground/10 justify-center items-center">
-            <h1>Stable</h1>
-            <Indicators state={"3 patients"} />
+            {isCount && <h1>{state}</h1>}
+            <Indicators state={state} patientNumber={patientNumber} />
         </div>
     )
 }

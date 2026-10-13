@@ -11,6 +11,7 @@ import {
 import Indicators from './Indicators'
 import HeartRateTracker from './HeartRateTracker'
 import VitalTracker from './VitalTracker'
+import type {State} from '../types'
 //import { Input } from "@/components/ui/input"
 //import { Label } from "@/components/ui/label"
 
@@ -22,7 +23,7 @@ interface Props {
   o2Sat : number,
   temp : string,
   ecg : string,
-  status : string,
+  status : State,
 }
 
 function PatientCard(props : Props) {
