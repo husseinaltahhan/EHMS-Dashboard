@@ -13,22 +13,34 @@ import HeartRateTracker from './HeartRateTracker'
 import VitalTracker from './VitalTracker'
 //import { Input } from "@/components/ui/input"
 //import { Label } from "@/components/ui/label"
-function PatientCard() {
+
+interface Props {
+  name : string,
+  sex : string,
+  age : number,
+  heartRate : number,
+  o2Sat : number,
+  temp : string,
+  ecg : string,
+  status : string,
+}
+
+function PatientCard(props : Props) {
   return (
     <Card className="w-200px max-w-sm">
       <CardHeader>
-        <CardTitle>John Doe</CardTitle>
+        <CardTitle>{props.name}</CardTitle>
         <CardDescription>
-            Room 304 • Male, 45y
+            Waiting Room • {props.sex}, {props.age}y
         </CardDescription>
-        <Indicators className="col-start-2 row-start-1 row-span-2" state={"Stable"} />
+        <Indicators className="col-start-2 row-start-1 row-span-2" state={props.status} />
       </CardHeader>
       <CardContent className="flex flex-row">
-            <HeartRateTracker className="flex" />
+            <HeartRateTracker className="flex" heartRate={props.heartRate}/>
             <div className="flex flex-col">
-                <VitalTracker vitalname={"O2 Sat"} value={98} />
-                <VitalTracker vitalname={"Temperature"} value={"99.1°F"} />
-                <VitalTracker vitalname={"ECG"} value={"Normal"} />
+                <VitalTracker vitalname={"O2 Sat"} value={props.o2Sat} />
+                <VitalTracker vitalname={"Temperature"} value={props.temp} />
+                <VitalTracker vitalname={"ECG"} value={props.ecg} />
             </div>
       </CardContent>
       <CardFooter className="flex-col gap-2">
