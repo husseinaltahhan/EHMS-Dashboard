@@ -21,7 +21,7 @@ interface Props {
   age : number,
   heartRate : number,
   o2Sat : number,
-  temp : string,
+  temp : number,
   ecg : string,
   status : State,
 }
